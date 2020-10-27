@@ -31,5 +31,24 @@
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.0",
     "styled-components": "^5.2.0"
-  }
+  },
+  "description": "A simple to use library that provides useSwipe hook for React that enables swipe gestures for touch screens.",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quintenkasteel/useresize.git"
+  },
+  "keywords": [
+    "useResize",
+    "resizeable",
+    "React"
+  ],
+  "author": "Quinten Kasteel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quintenkasteel/useresize/issues"
+  },
+  "homepage": "https://github.com/quintenkasteel/useresize#readme"
 }
