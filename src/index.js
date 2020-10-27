@@ -1,3 +1,3 @@
-import useSwipe from './useSwipe/useSwipe'
+import useResize from './useResize'
 
-export default useSwipe
+export default useResize

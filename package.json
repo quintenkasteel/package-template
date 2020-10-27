@@ -1,6 +1,6 @@
 {
-  "name": "@quintenkasteel/useswipe",
-  "version": "0.6.6",
+  "name": "@quintenkasteel/useresize",
+  "version": "0.0.1",
   "main": "./lib/index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js",
