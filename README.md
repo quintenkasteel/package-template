@@ -1,64 +1,23 @@
 # Getting Started with UseSwipe
-A simple to use library that provides useSwipe hook for React that enables swipe gestures for touch screens.
+A simple to use library that provides useResize hook for React that returns the width and height of the screen and viewport.
 
 ## Usage
-  `import useSwipe from '@quintenkasteel/useswipe'`
+  `import useSwipe from '@quintenkasteel/useresize'`
 
-example without element
- `const swipe = useSwipe({})`
-
-example with element
- `const swipe = useSwipe(".header", true)`
+ `const reSize = useResize()`
 
 
-
-## Props
-    element: String
-  DOM element where the swipe is enabled. default value is body.
-
-    preventDefault: Bool
-  Prevent all default events when moving. for example scrolling.
-
-    onStart: () => {}
-  function that will be fired on start of moving. (not yet in)
-
-    onMove: () => {}
-  function that will be fired on every move. (not yet in)
-
-    onEnd: () => {}
-  function that will be fired on end of moving. (not yet in)
-
-    onCancel: () => {}
-  function that will be fired on cancel of moving. (not yet in)
 
 ## Return Values
-    direction: String
-  Get the current swiping direction in uppercase.   
-  one of: "RIGHT" | "LEFT" | "DOWN" | "UP" 
+    width: String
+  Get the width of the viewport in pixels.
 
-    distance: Number
-  Get the swiped amount in pixels.
+    height: Number
+  Get the height of the viewport in pixels.
 
-    startX: Number
-  Get the starting X position in pixels.
+    screenWidth: Number
+  Get the width of the screen. 
 
-    startY: Number
-  Get the starting Y position in pixels.
+    screenHeight: Number
+  Get the height of the screen. 
 
-    endX: Number
-  Get the end X position in pixels.
-
-    endY: Number
-  Get the end Y position in pixels.
-
-    startTime: Date
-  Get the date at the beginning of the swipe. 
-
-    elapsedTime: Number
-  Get the duration of the swipe in seconds. 
-
-    speed: Number
-  Get the speed of the swipe
-
-    isSwiping: Bool 
-  True when swiping. 
