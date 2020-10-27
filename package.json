@@ -1,6 +1,6 @@
 {
   "name": "@quintenkasteel/useresize",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js",
