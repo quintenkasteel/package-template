@@ -1,4 +1,4 @@
-# Getting Started with UseSwipe
+# Getting Started with UseResize
 A simple to use library that provides useResize hook for React that returns the width and height of the screen and viewport.
 
 ## Usage
