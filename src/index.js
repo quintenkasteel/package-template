@@ -1,3 +1,3 @@
-import useResize from './useResize'
+import function from './'
 
-export default useResize
+export default function
