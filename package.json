@@ -5,9 +5,9 @@
   "scripts": {
     "start": "webpack serve --config ./webpack.config.js",
     "build": "tsc --p ./tsconfig.json",
-    "lib": "babel src --out-dir lib --copy-files",
     "test": "jest --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "coverage": "jest --coverage"
   },
   "peerDependencies": {
     "react": "^17.0.1"
