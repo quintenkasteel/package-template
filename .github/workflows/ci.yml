@@ -6,6 +6,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 6
       matrix:
         # Run build for both Node version 12 and version 14
         node-version: [10.x, 12.x, 14.x]
