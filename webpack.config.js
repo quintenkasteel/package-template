@@ -17,7 +17,7 @@ module.exports = env => {return {
   mode: 'development',
 
   // Entry point of app
-  entry: './demo/App.js',
+  entry: './demo/App.tsx',
 
   output: {
     path: __dirname + '/demo',
@@ -51,6 +51,13 @@ module.exports = env => {return {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "awesome-typescript-loader"
         }
       },
       {
