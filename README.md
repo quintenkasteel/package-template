@@ -11,31 +11,31 @@
 Description of the package - small summary
 
 ## Installation
-`npm install --save [name package]`
+    npm install --save [name package]
 
 or
 
-`yarn add [name package]`
+    yarn add [name package]
 
 
 ## Usage
 
-`import [name package] from '@quintenkasteel/[name package]'`
+    import [name package] from '@quintenkasteel/[name package]'
 
 example without element
  
- `const swipe = useSwipe({})`
+    const swipe = useSwipe({})
 
 example with element
  
- `const swipe = useSwipe(".header", true)`
+    const swipe = useSwipe(".header", true)
 
 ## Props
-    `element: String`
+    element: String
   DOM element where the swipe is enabled. default value is body.
 
 
-    `preventDefault: Bool`
+    preventDefault: Bool
   Prevent all default events when moving. for example scrolling.
 
 ## Return Values
@@ -49,3 +49,8 @@ example with element
     startX: Number
   Get the starting X position in pixels.
 
+# Compatibility
+
+This package uses React Hooks, and it is compatible with React 16.8 and higher.
+
+    npm i react

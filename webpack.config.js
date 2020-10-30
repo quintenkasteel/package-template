@@ -25,9 +25,12 @@ module.exports = env => {return {
     filename: 'bundle.js'
   },
 
-  devServer: {
+    resolve: {
+      extensions: ['.ts', '.js', '.jsx', '.tsx', '.json'],
+    },  
+    devServer: {
     // Serve index.html as the base
-    contentBase: './lib',
+    contentBase: './demo',
     
 
     // Enable compression

@@ -6,6 +6,11 @@
     "settings": {
       "react": {
         "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+      },
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
       }
     },
     "extends": [
@@ -31,6 +36,16 @@
       "semi": ["error", "always"],
       "quotes": ["error", "single"],
       "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+     ]
   }
 }

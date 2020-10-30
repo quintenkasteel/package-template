@@ -1,3 +1,3 @@
-import Example from './function/index'
+import Example from './example/index';
 
-export default Example
+export default Example;
