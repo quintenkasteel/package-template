@@ -1,0 +1,31 @@
+
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 6
+      matrix:
+        # Run build for both Node version 12 and version 14
+        node-version: [10.x, 12.x, 14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          # this is regarding the matrix strategy specified above
+          node-version: ${{ matrix.node-version }}
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn install` command
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build # will run `yarn build` command
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: test # will run `yarn test` command
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: run coverage # will run `yarn run coverage` command

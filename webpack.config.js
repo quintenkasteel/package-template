@@ -6,67 +6,77 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const appDirectory = fs.realpathSync(process.cwd());
 
 // Gets absolute path of file within app directory
-const resolveAppPath = (relativePath) =>
-  path.resolve(appDirectory, relativePath);
+const resolveAppPath = (relativePath) => path.resolve(appDirectory, relativePath);
 
 // Host
 const host = process.env.HOST || 'localhost';
 
-module.exports = env => {return {
-  // Environment mode
-  mode: 'development',
+module.exports = (env) => {
+  return {
+    // Environment mode
+    mode: 'development',
 
-  // Entry point of app
-  entry: './demo/App.js',
+    // Entry point of app
+    entry: './demo/App.tsx',
 
-  output: {
-    path: __dirname + '/demo',
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
+    output: {
+      path: __dirname + '/demo',
+      publicPath: '/',
+      filename: 'bundle.js',
+    },
 
-  devServer: {
-    // Serve index.html as the base
-    contentBase: './lib',
-    
+    resolve: {
+      extensions: ['.ts', '.js', '.jsx', '.tsx', '.json'],
+    },
+    devServer: {
+      // Serve index.html as the base
+      contentBase: './demo',
 
-    // Enable compression
-    compress: true,
+      // Enable compression
+      compress: true,
 
-    // Enable hot reloading
-    hot: true,
+      // Enable hot reloading
+      hot: true,
 
-    host: host,
+      host: host,
 
-    port: 3000,
+      port: 3000,
 
-    // Public path is root of content base
-    publicPath: '/',
-  },
+      // Public path is root of content base
+      publicPath: '/',
+    },
 
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
-      }
-    ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./demo/index.html",
-      filename: "./index.html"
-    })
-  ]
-}};
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+          },
+        },
+        {
+          test: /\.(ts|tsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'awesome-typescript-loader',
+          },
+        },
+        {
+          test: /\.html$/,
+          use: [
+            {
+              loader: 'html-loader',
+            },
+          ],
+        },
+      ],
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: './demo/index.html',
+        filename: './index.html',
+      }),
+    ],
+  };
+};
